@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: quote
+  annotations:
+    cygnus.io/hostname: "www.aaron.com"
+    cygnus.io/path: "/authg"
+    a8r.io/owner: “@sally”
+    a8r.io/repository: "https://github.com/ambassadorlabs/k8s-for-humans/"
+spec:
+  ports:
+  - name: http
+    port: 8090
+    targetPort: 8080
+  selector:
+    app: quote
